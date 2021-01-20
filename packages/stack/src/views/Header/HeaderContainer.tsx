@@ -142,10 +142,7 @@ export default function HeaderContainer({
                 style={
                   // Avoid positioning the focused header absolutely
                   // Otherwise accessibility tools don't seem to be able to find it
-                  ...(((mode === 'float' && !isFocused) || headerTransparent
-                    ? styles.header
-										: null) || {}),
-										zIndex: 10
+                  { ...(((mode === 'float' && !isFocused) || headerTransparent ? styles.header: null) || {}), zIndex: 10 }
                 }
               >
                 {header !== undefined ? header(props) : <Header {...props} />}
